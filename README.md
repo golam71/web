@@ -1,4 +1,4 @@
-# Astro Starter Kit: Minimal
+# :sparkles: Salam.app website
 
 ```
 git clone https://github.com/Salam-Labs/web
