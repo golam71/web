@@ -46,11 +46,11 @@ const BlogData = [
       {itemArray.map(item => {
         switch(item.type) {
           case 'h1':
-            return <h1 class="mx-auto sm:px-6 max-w-3xl px-4 font-bold text-white  md:text-5xl text-4xl tracking-tighter">{item.content}</h1>
+            return <h1 class="mx-auto sm:px-6 max-w-3xl px-4 font-bold text-white  md:text-5xl  ">{item.content}</h1>
           case 'p':
             return <p class=" dark:text-slate-400 max-w-3xl text-grey-50 mb-8 md:text-2xl mt-4 mx-auto px-4 sm:px-6 text-justify text-xl">{item.content}</p>
           case 'image':
-            return <img src={item.content} alt="" class="mx-auto m-10 rounded-3xl"/>
+          return <img src={item.content} alt="" class="mx-auto m-10 rounded-lg w-4/5 sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-3/5 h-auto object-cover"/>
           case 'quote':
             return <blockquote class="border-l-4  pl-4 p-5 mx-auto italic sm:px-6 max-w-3xl bg-smoke-500 rounded-lg  text-gray-300 text-xl">{item.content}</blockquote>
           case 'bold':
@@ -70,5 +70,15 @@ const BlogData = [
     </div>
   ))}
   </div>
+  <div class="flex justify-center"><a href="/help" class="p-5 px-10  bg-aquamarine text-center mx-auto  text-black mb-12 rounded-3xl font-semibold underline decoration-wavy decoration-aquamarine "> Go To Blog List Page </a></div>
   <Footer />
+
+  <script defer>
+const navElement = document.querySelector("nav");
+
+if (navElement) {
+  navElement.style.backgroundColor = "#0A0B0C";
+}
+document.getElementById("footerd").classList.add("hidden");
+  </script>
 </div>
