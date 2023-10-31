@@ -39,47 +39,49 @@ const BlogData = [
 
 ---
 
-<div class="bg-smoke-600 ">
-  <NavBar client:load />
-  <div class="mx-auto lg:py-20 py-8 sm:py-16">
-  {BlogData.map((itemArray) => (
-    <div class="">
-      {itemArray.map(item => {
-        switch(item.type) {
-          case 'h1':
-            return <h1 class="mx-auto sm:px-6 max-w-3xl px-4 font-bold text-white  md:text-5xl  ">{item.content}</h1>
-          case 'p':
-            return <p class=" dark:text-slate-400 max-w-3xl text-grey-50 mb-8 md:text-2xl mt-4 mx-auto px-4 sm:px-6 text-justify text-xl">{item.content}</p>
-          case 'image':
-          return <img src={item.content} alt="" class="mx-auto m-10 rounded-lg w-4/5 sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-3/5 h-auto object-cover"/>
-          case 'quote':
-            return <blockquote class="border-l-4  pl-4 p-5 mx-auto italic sm:px-6 max-w-3xl bg-smoke-500 rounded-lg  text-gray-300 text-xl">{item.content}</blockquote>
-          case 'bold':
-            return <p class="dark:text-slate-400 max-w-3xl text-grey-50 mb-8 md:text-2xl mt-4 mx-auto px-4 font-extrabold sm:px-6 text-justify text-xl ">{item.content}</p>
-          case 'italic':
-            return <p class=" italic dark:text-slate-400 max-w-3xl text-grey-50 mb-8 md:text-2xl mt-4 mx-auto px-4  sm:px-6 text-justify text-xl font-semibold">{item.content}</p>
-          case 'ul':
-            return <div class="prose mx-auto m-10">
-               <ul class="list-disc">{item.content.map(listItem => <li class="text-slate-300 text-xl">{listItem}</li>)}</ul>
-            </div>
-          case 'ol':
-            return <div class="prose mx-auto m-10">
-               <ol class="list-decimal">{item.content.map(listItem => <li class="text-slate-300 text-xl ">{listItem}</li>)}</ol>
-            </div>
-        }
-      })}
+<Layout>
+  <div class="bg-smoke-600 ">
+    <!-- <NavBar client:load /> -->
+    <div class="mx-auto lg:py-20 py-8 sm:py-16">
+    {BlogData.map((itemArray) => (
+      <div class="">
+        {itemArray.map(item => {
+          switch(item.type) {
+            case 'h1':
+              return <h1 class="mx-auto sm:px-6 max-w-3xl px-4 font-bold text-white  md:text-5xl  ">{item.content}</h1>
+            case 'p':
+              return <p class=" dark:text-slate-400 max-w-3xl text-grey-50 mb-8 md:text-2xl mt-4 mx-auto px-4 sm:px-6 text-justify text-xl">{item.content}</p>
+            case 'image':
+            return <img src={item.content} alt="" class="mx-auto m-10 rounded-lg w-4/5 sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-3/5 h-auto object-cover"/>
+            case 'quote':
+              return <blockquote class="border-l-4  pl-4 p-5 mx-auto italic sm:px-6 max-w-3xl bg-smoke-500 rounded-lg  text-gray-300 text-xl">{item.content}</blockquote>
+            case 'bold':
+              return <p class="dark:text-slate-400 max-w-3xl text-grey-50 mb-8 md:text-2xl mt-4 mx-auto px-4 font-extrabold sm:px-6 text-justify text-xl ">{item.content}</p>
+            case 'italic':
+              return <p class=" italic dark:text-slate-400 max-w-3xl text-grey-50 mb-8 md:text-2xl mt-4 mx-auto px-4  sm:px-6 text-justify text-xl font-semibold">{item.content}</p>
+            case 'ul':
+              return <div class="prose mx-auto m-10">
+                 <ul class="list-disc">{item.content.map(listItem => <li class="text-slate-300 text-xl">{listItem}</li>)}</ul>
+              </div>
+            case 'ol':
+              return <div class="prose mx-auto m-10">
+                 <ol class="list-decimal">{item.content.map(listItem => <li class="text-slate-300 text-xl ">{listItem}</li>)}</ol>
+              </div>
+          }
+        })}
+      </div>
+    ))}
     </div>
-  ))}
+    <div class="flex justify-center"><a href="/help" class="p-5 px-10  bg-aquamarine text-center mx-auto  text-black mb-12 rounded-3xl font-semibold underline decoration-wavy decoration-aquamarine "> Go To Blog List Page </a></div>
+    <Footer />
+  
+    <script defer>
+  const navElement = document.querySelector("nav");
+  
+  if (navElement) {
+    navElement.style.backgroundColor = "#0A0B0C";
+  }
+  document.getElementById("footerd").classList.add("hidden");
+    </script>
   </div>
-  <div class="flex justify-center"><a href="/help" class="p-5 px-10  bg-aquamarine text-center mx-auto  text-black mb-12 rounded-3xl font-semibold underline decoration-wavy decoration-aquamarine "> Go To Blog List Page </a></div>
-  <Footer />
-
-  <script defer>
-const navElement = document.querySelector("nav");
-
-if (navElement) {
-  navElement.style.backgroundColor = "#0A0B0C";
-}
-document.getElementById("footerd").classList.add("hidden");
-  </script>
-</div>
+</Layout>
