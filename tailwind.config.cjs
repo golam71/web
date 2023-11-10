@@ -2,6 +2,9 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  options: {
+    safelist: ['list-disc', 'list-decimal'], // add this line
+  },
   theme: {
     colors: {
       transparent: "transparent",
@@ -12,6 +15,8 @@ module.exports = {
       emerald: colors.emerald,
       indigo: colors.indigo,
       yellow: colors.yellow,
+      slate: colors.slate,
+      stone: colors.stone,
       grey: {
         DEFAULT: "#262A34",
         50: "#76819B",
@@ -59,7 +64,7 @@ module.exports = {
         300: "#313847",
         400: "#21252F",
         500: "#101217",
-        600: "#000000",
+        600: "#0A0B0C",
         700: "#000000",
         800: "#000000",
         900: "#000000",
