@@ -1,9 +1,9 @@
 ---
-import { Icon } from "astro-icon";
-
 import Layout from "@layouts/Layout.astro";
-
-
+import CiDiscord from "~icons/ci/discord";
+import CiGithub from "~icons/ci/github";
+import CiWebsite from "~icons/mdi/world-wide-web";
+import CiMail from "~icons/ic/round-mail-outline";
 
 const developers = [
   {
@@ -50,6 +50,7 @@ const developers = [
     bio: "I'm 15 years old―new to the programming world and always learning! ",
 
     links: [
+      
       {
         github: "https://github.com/ismailfateen",
       },
@@ -332,8 +333,8 @@ const developers = [
         <button
           id="Writer"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
-          onclick="showDevelopers('Writer')"          
-          >TEXT
+          onclick="showDevelopers('Writer')"
+                    >TEXT
         </button>
       </div>
     </div>
@@ -387,29 +388,13 @@ const developers = [
                       aria-label={`Link to ${Object.keys(link)[0]}`}
                     >
                       {Object.keys(link)[0] === "github" ? (
-                        <Icon
-                          name="ci:github"
-                          alt="GitHub logo"
-                          class="w-6 h-6"
-                        />
+                        <CiGithub alt="GitHub logo" class="w-6 h-6" />
                       ) : Object.keys(link)[0] === "discord" ? (
-                        <Icon
-                          name="mdi:discord"
-                          alt="Discord logo"
-                          class="w-6 h-6"
-                        />
+                        <CiDiscord alt="Discord logo" class="w-6 h-6" />
                       ) : Object.keys(link)[0] === "website" ? (
-                        <Icon
-                          name="mdi:world-wide-web"
-                          alt="Website logo"
-                          class="w-6 h-6"
-                        />
+                        <CiWebsite alt="Website logo" class="w-6 h-6" />
                       ) : Object.keys(link)[0] === "mail" ? (
-                        <Icon
-                         name="ic:outline-mail"
-                          alt="Mail logo"
-                          class="w-6 h-6"
-                        />
+                        <CiMail alt="Website logo" class="w-6 h-6" />
                       ) : null}
                     </a>
                   ))}

@@ -403,12 +403,16 @@ import Layout from "@layouts/Layout.astro";
 
 <script>
   // eslint-disable-next-line import/no-named-as-default
-import Swiper from "swiper";
-import { Navigation, Pagination , Autoplay} from 'swiper/modules'
-import "swiper/css"; // Import Swiper's main CSS file first
-import "swiper/css/navigation";
-import "swiper/css/pagination";  //dddndnd
-import "swiper/css/autoplay";
+  // i really hate swiper js
+  // edit i dont anymore
+
+
+  import Swiper from 'swiper';
+  import {Navigation, Pagination, Autoplay}  from 'swiper/modules';
+  import "swiper/css";
+  import "swiper/css/pagination";
+  import "swiper/css/navigation"
+  import "swiper/css/autoplay";
 
   // eslint-disable-next-line no-unused-vars
   const swiper = new Swiper(".mySwiper", {
